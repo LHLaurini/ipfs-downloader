@@ -19,3 +19,14 @@ npm run bundle
 ```
 
 See the [public/index.html](public/index.html) example or [try it live](https://ipfs.io/ipfs/QmPNSLu15AaMbxQRb5pe7LjxzyiHd1Xiz44xZoRcUxWxZF) (from IPFS).
+
+## To-do
+
+* High priority:
+    * Allow downloading directories (zipped);
+    * Don't store file in RAM (should allow downloading larger files).
+* Medium priority:
+    * Customization;
+    * Show details (size, rate, status, ...).
+* Low priority:
+    * Use running node, if present.
