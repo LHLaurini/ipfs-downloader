@@ -1,0 +1,26 @@
+.ipfs-downloader {
+    --progress: 0;
+    --progress-color: #00fb00;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    background-color: rgb(50, 50, 50);
+    display: inline-block;
+    border: 2px solid rgb(25, 25, 25);
+    margin: 2px;
+    text-align: center;
+    width: 200px;
+    padding: 12px 0;
+    font-size: 14pt;
+}
+
+.ipfs-downloader::after {
+    content: "";
+    width: calc(var(--progress) * 100%);
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--progress-color);
+}

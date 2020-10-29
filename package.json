@@ -1,0 +1,20 @@
+{
+  "name": "ipfs-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "node bundle.js > public/bundle.js",
+    "clean": "rm public/bundle.js"
+  },
+  "author": "Luiz Henrique Laurini",
+  "license": "Unlicense",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "ipfs": "^0.51.0",
+    "tsify": "^5.0.2",
+    "type-fest": "^0.18.0",
+    "typescript": "^4.0.5",
+    "uint8arrays": "^1.1.0"
+  }
+}
