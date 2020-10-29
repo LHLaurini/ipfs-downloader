@@ -14,14 +14,6 @@ function createDownloadUrl(data: Uint8Array) {
     return URL.createObjectURL(file);
 }
 
-// let a = document.createElement("a");
-//                 let content: Uint8Array = uint8ArrayConcat(await all(x.content));
-//                 a.href = createDownloadUrl(content);
-//                 a.download = "file.bin";
-//                 a.appendChild(document.createTextNode("Download!"));
-
-//                 document.body.appendChild(a);
-
 function downloadIpfsFile(ipfs: Ipfs, cid: string, onProgress: (downloaded: number, total: number) => void) {
     return new Promise(async function (resolve: (arg: Uint8Array) => void, reject: () => void) {
         let data: Uint8Array[] = [];
@@ -60,15 +52,6 @@ function downloadIpfsFile(ipfs: Ipfs, cid: string, onProgress: (downloaded: numb
 async function initIpfs() {
     if (initIpfs.ipfs === undefined) {
         initIpfs.ipfs = await IPFS.create(OPTIONS);
-        const version = await initIpfs.ipfs.version();
-
-        console.log(`Version: ${version.version}`);
-
-        /*
-            /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
-            /ipfs/bafybeigwwctpv37xdcwacqxvekr6e4kaemqsrv34em6glkbiceo3fcy4si
-        */
-
         return initIpfs.ipfs;
     }
     else {
