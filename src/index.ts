@@ -81,11 +81,13 @@ function download(self: HTMLAnchorElement, cid: string) {
                     self.href = createDownloadUrl(data);
                     self.click();
                 })
-                .catch(function () {
+                .catch(function (err) {
+                    console.error(err);
                     error(self);
                 });
         })
-        .catch(function () {
+        .catch(function (err) {
+            console.error(err);
             error(self);
         })
 }
