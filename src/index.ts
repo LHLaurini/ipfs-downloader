@@ -63,21 +63,31 @@ namespace initIpfs {
     export let ipfs: Ipfs | undefined;
 }
 
-async function download(self: HTMLAnchorElement, cid: string) {
-    let ipfs = await initIpfs();
-    let dataPromise = downloadIpfsFile(ipfs, cid, function (downloaded: number, total: number) {
-        self.style.setProperty("--progress", (downloaded / total).toString());
-    });
-    dataPromise.catch(function () {
-        self.innerText = "Failed";
-        self.style.setProperty("--progress", "1");
-        self.style.setProperty("--progress-color", "#fa0000");
-    });
-    let data = await dataPromise;
-    self.innerText = "Downloaded";
-    self.onclick = null;
-    self.href = createDownloadUrl(data);
-    self.click();
+function error(self: HTMLAnchorElement) {
+    self.innerText = "Failed";
+    self.style.setProperty("--progress", "1");
+    self.style.setProperty("--progress-color", "#fa0000");
+}
+
+function download(self: HTMLAnchorElement, cid: string) {
+    initIpfs()
+        .then(function (ipfs: Ipfs) {
+            downloadIpfsFile(ipfs, cid, function (downloaded: number, total: number) {
+                self.style.setProperty("--progress", (downloaded / total).toString());
+            })
+                .then(function (data: Uint8Array) {
+                    self.innerText = "Downloaded";
+                    self.onclick = null;
+                    self.href = createDownloadUrl(data);
+                    self.click();
+                })
+                .catch(function () {
+                    error(self);
+                });
+        })
+        .catch(function () {
+            error(self);
+        })
 }
 
 window.onload = function () {
