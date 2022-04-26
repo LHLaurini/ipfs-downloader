@@ -11,7 +11,7 @@
   "license": "Unlicense",
   "dependencies": {
     "browserify": "^17.0.0",
-    "ipfs": "^0.51.0",
+    "ipfs": "^0.62.3",
     "tinyify": "^3.0.0",
     "tsify": "^5.0.2",
     "type-fest": "^0.18.0",
