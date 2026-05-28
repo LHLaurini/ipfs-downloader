@@ -18,7 +18,7 @@ npm run build
 <a class="ipfs-downloader" data-path="/ipfs/CID/filename" download="filename.ext">Download label</a>
 ```
 
-See the [public/index.html](public/index.html) example or [try it live](https://ipfs.io/ipfs/QmPNSLu15AaMbxQRb5pe7LjxzyiHd1Xiz44xZoRcUxWxZF) (from IPFS).
+See the [public/index.html](public/index.html) example (requires HTTPS) or [try it live](https://lhlaurini.github.io/ipfs-downloader/).
 
 ## To-do
 
