@@ -10,7 +10,7 @@
   "author": "Luiz Henrique Laurini",
   "license": "Unlicense",
   "devDependencies": {
-    "@helia/unixfs": "^7.2.1",
+    "@helia/unixfs": "^8.0.4",
     "esbuild": "^0.28.0",
     "helia": "^6.1.4"
   }
